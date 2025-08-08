@@ -24,8 +24,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to Render.com
-        uses: render-oss/render-deploy@v1.3.0
+        uses: render-actions/deploy@v1
         with:
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
-          wait-for-deployment: true
+          wait: true  # 等待部署完成（相当于旧版的 wait-for-deployment）
